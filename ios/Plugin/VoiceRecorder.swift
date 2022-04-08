@@ -67,7 +67,7 @@ public class VoiceRecorder: CAPPlugin {
         }
         let recordData = RecordData(
             recordDataBase64: readFileAsBase64(audioFileUrl),
-            mimeType: "audio/aac",
+            mimeType: "audio/mpeg",
             msDuration: getMsDurationOfAudioFile(audioFileUrl)
         )
         customMediaRecorder = nil
