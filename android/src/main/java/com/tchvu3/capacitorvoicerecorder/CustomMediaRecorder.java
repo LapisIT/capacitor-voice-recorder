@@ -24,7 +24,7 @@ public class CustomMediaRecorder {
     private void generateMediaRecorder() throws IOException {
         mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);
+        mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
         setRecorderOutputFile();
         mediaRecorder.prepare();
@@ -32,7 +32,7 @@ public class CustomMediaRecorder {
 
     private void setRecorderOutputFile() throws IOException {
         File outputDir = context.getCacheDir();
-        outputFile = File.createTempFile("voice_record_temp", ".aac", outputDir);
+        outputFile = File.createTempFile("voice_record_temp", ".m4a", outputDir);
         outputFile.deleteOnExit();
         mediaRecorder.setOutputFile(outputFile.getAbsolutePath());
     }
